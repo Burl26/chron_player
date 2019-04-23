@@ -3,12 +3,13 @@ MP3 Player For Browser
 
 MP3 Browser/Player for HTML5 Browsers
 
-A simple MP3 player that uses a xml database.  It does not need php etc. or a running server as it uses an xml file
-as its database.
-This is also a quick-and-dirty way of reading the cover art from an MP3 file with ID3v2 tags.  After spending a weekend 
+A simple MP3 player that uses a xml database.  It does not need running server since it uses a local xml file as its database.
+This also includes a quick-and-dirty way of reading the cover art from an MP3 file with ID3v2 tags.  After spending a weekend 
 of scanning forums and coding a full-blown tag reader, I realized I didn't need it.  I just looked for the image/jpeg string
 and grabbed the data bytes of the image that followed.  Then, I encoded the image into a DataUrl and displayed it.  One sneaky
 trick: some markers contain a null byte after the FF.  These need to be ignored.
+
+![alt text](./chron_player.png "Example screen")
 
 Instructions:
 1. put chron_player.html in the top-level directory
