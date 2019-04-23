@@ -1,21 +1,21 @@
 # chron_player
-MP3 Player For Browser
+MP3 Browser/Player For HTML5 Browsers
 
-MP3 Browser/Player for HTML5 Browsers
+It's called chron_player because I wanted to browse my music according to year, but also by title and artist.
 
 A simple MP3 player that uses a xml database.  It does not need running server since it uses a local xml file as its database.
 This also includes a quick-and-dirty way of reading the cover art from an MP3 file with ID3v2 tags.  After spending a weekend 
 of scanning forums and coding a full-blown tag reader, I realized I didn't need it.  I just looked for the image/jpeg string
 and grabbed the data bytes of the image that followed.  Then, I encoded the image into a DataUrl and displayed it.  One sneaky
-trick: some markers contain a null byte after the FF.  These need to be ignored.
+trick: some JPEG markers contain a null byte after the FF.  These need to be ignored.
 
 ![alt text](./chron_player.png "Example screen")
 
 Instructions:
-1. put chron_player.html in the top-level directory
+1. put chron_player.html in the top-level directory of your library
 2. create an xml file of your songs that has the tags "year", "Artist", "Title", and "File".  Put this xml file in
-the same directory as chron_player.html.
-3. The files must be in the same directory as chron_player.html or below.
+the same directory as chron_player.html. See example below.
+3. The files must be in the same directory as chron_player.html or subdirectories.
 
 example xml file:
 ```
@@ -35,3 +35,5 @@ example xml file:
 </song>
 </chron>
 ```
+Limitations:
+-Only works for embedded jpegs.
